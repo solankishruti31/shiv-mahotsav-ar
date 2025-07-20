@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prambanan Temple - WebAR</title>
+
+  <!-- Model Viewer and Google Font -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      margin: 10px 0;
+      font-size: 28px;
+      color: gold;
+    }
+
+    model-viewer {
+      width: 100vw;
+      height: 80vh;
+      margin: 0;
+      background-color:  gainsboro;
+    }
+
+    .back-button {
+      margin: 16px;
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: white;
+      color: black;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .back-button:hover {
+      background-color: gold;
+    }
+
+    .back-button:active {
+      transform: scale(0.96);
+      background-color: darkorange;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🛕 Prambanan Temple 🛕</h1>
+
+  <model-viewer
+    src="models/prambanan.glb"
+    alt="Prambanan Temple 3D Model"
+    ar
+    ar-modes="webxr scene-viewer quick-look"
+    auto-rotate
+    camera-controls
+    shadow-intensity="2"
+    loading="eager"
+    poster="posters/prambanan-poster.png"
+    reveal="auto">
+  </model-viewer>
+
+  <button class="back-button" onclick="window.location.href='index.html'">← Back to Home</button>
+
+</body>
+</html>
